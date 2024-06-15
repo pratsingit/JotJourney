@@ -12,6 +12,7 @@ This project was bootstrapped with Create React App.
 
 ## Features
 - **Add Tasks**: Easily add tasks to your travel itinerary.
+- **Input Validation**: Input Validation is thoroughly used to ensure no blank tasks are inserted.
 - **Task Descriptions**: Optionally add descriptions to tasks for more detailed planning.
 - **View Tasks**: See all your tasks in a clear and organized list format.
 - **Edit Tasks**: Update task descriptions directly within the task list.
