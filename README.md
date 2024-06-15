@@ -18,8 +18,9 @@ This project was bootstrapped with Create React App.
 - **Delete Tasks**: Remove tasks from your itinerary when they are completed or no longer needed.
 - **Download Tasks**: Export your tasks to either .txt or .pdf format for easy sharing and offline access.
 
-## Demo
-Check out the live demo [here](https://mtm-frontend-pratyush-chowdhury.vercel.app/).
+## Live Deployment
+Check out the Live Deployement [here](https://mtm-frontend-pratyush-chowdhury.vercel.app/).
+https://mtm-frontend-pratyush-chowdhury.vercel.app/
 
 ## Setup Instructions
 1. Clone the repository:
