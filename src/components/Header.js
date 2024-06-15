@@ -18,8 +18,8 @@ const Header = () => {
         <Nav className="ml-auto">
           <Nav.Link as={Link} to="/" className="nav-link-custom">Home</Nav.Link>
           <Nav.Link as={Link} to="/tasks" className="nav-link-custom">Tasks</Nav.Link>
-          <Nav.Link href="#" className="nav-link-custom">Placeholder</Nav.Link>
           <Nav.Link as={Link} to="/about" className="nav-link-custom">About Me</Nav.Link>
+          <Nav.Link as={Link} to="https://github.com/pratsingit/mtm-frontend-pratyush-chowdhury" className="nav-link-custom">Project's Github Link</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

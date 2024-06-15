@@ -1,22 +1,23 @@
 import React, { useState } from 'react';
+import { jsPDF } from 'jspdf';
 
 const TaskList = ({ tasks, deleteTask, updateTask }) => {
-  const [editIndex, setEditIndex] = useState(-1); 
-  const [editedTask, setEditedTask] = useState({ name: '', description: '' }); 
+  const [editIndex, setEditIndex] = useState(-1);
+  const [editedTask, setEditedTask] = useState({ name: '', description: '' });
 
   const handleEditClick = (index) => {
-    setEditIndex(index); 
-    setEditedTask(tasks[index]); 
+    setEditIndex(index);
+    setEditedTask(tasks[index]);
   };
 
   const handleCancelEdit = () => {
-    setEditIndex(-1); 
+    setEditIndex(-1);
   };
 
   const handleSaveEdit = (index) => {
     const updatedTasks = [...tasks];
     updatedTasks[index] = editedTask;
-    updateTask(updatedTasks); 
+    updateTask(updatedTasks);
     setEditIndex(-1);
   };
 
@@ -28,28 +29,36 @@ const TaskList = ({ tasks, deleteTask, updateTask }) => {
     }));
   };
 
-  const handleDownload = () => {
-    
-    const content = tasks.map((task) => {
-      return `Task: ${task.name}\nDescription: ${task.description}\n\n`;
+  const handleDownloadTxt = () => {
+    const content = tasks.map((task, index) => {
+      return `${index + 1}. Task: ${task.name}\nDescription: ${task.description}\n\n`;
     }).join('');
 
-    
     const blob = new Blob([content], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'tasks.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  };
 
-    
-    const downloadLink = document.createElement('a');
-    downloadLink.href = URL.createObjectURL(blob);
-    downloadLink.download = 'tasks.txt'; 
+  const handleDownloadPdf = () => {
+    const content = tasks.map((task, index) => {
+      return `${index + 1}. Task: ${task.name}\nDescription: ${task.description}\n\n`;
+    }).join('');
 
-    
-    document.body.appendChild(downloadLink);
+    const doc = new jsPDF();
 
-    
-    downloadLink.click();
+    doc.setProperties({
+      title: 'Tasks List',
+      author: 'Your Name',
+    });
 
-    
-    document.body.removeChild(downloadLink);
+    doc.text(content, 10, 10);
+
+    doc.save('tasks.pdf');
   };
 
   return (
@@ -57,7 +66,7 @@ const TaskList = ({ tasks, deleteTask, updateTask }) => {
       <ul className="list-group">
         {tasks.map((task, index) => (
           <li key={index} className="list-group-item d-flex justify-content-between align-items-center">
-            {editIndex === index ? ( 
+            {editIndex === index ? (
               <div>
                 <input
                   type="text"
@@ -66,7 +75,7 @@ const TaskList = ({ tasks, deleteTask, updateTask }) => {
                   onChange={(e) => handleInputChange(e, 'name')}
                 />
                 <textarea
-                  className="form-control resize-horizontal-and-vertical" 
+                  className="form-control resize-horizontal-and-vertical"
                   value={editedTask.description}
                   onChange={(e) => handleInputChange(e, 'description')}
                 />
@@ -105,8 +114,11 @@ const TaskList = ({ tasks, deleteTask, updateTask }) => {
         ))}
       </ul>
       <div className="mt-3">
-        <button className="btn btn-primary" onClick={handleDownload}>
-          Download Tasks
+        <button className="btn btn-primary me-2" onClick={handleDownloadTxt}>
+          Download Tasks as Text
+        </button>
+        <button className="btn btn-primary" onClick={handleDownloadPdf}>
+          Download Tasks as PDF
         </button>
       </div>
     </div>
