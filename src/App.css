@@ -4,11 +4,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', Georgia, 'Times New Roman', Times, serif;
-  overflow-x: hidden; /* Remove horizontal scrollbar */
+  overflow-x: hidden; 
 }
 
 .background-video {
-  position: fixed; /* Use fixed position to cover entire viewport */
+  position: fixed; 
   top: 0;
   left: 0;
   width: 100%;

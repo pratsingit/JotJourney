@@ -7,7 +7,7 @@ const TaskInput = ({ addTask }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (taskName.trim()) {
-      addTask({ name: taskName, description: taskDescription }); // Pass an object with name and description
+      addTask({ name: taskName, description: taskDescription }); 
       setTaskName('');
       setTaskDescription('');
     }
