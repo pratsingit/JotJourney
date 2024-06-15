@@ -1,0 +1,79 @@
+/* Header.css */
+
+.custom-navbar {
+  padding: 1rem 2rem;
+  transition: background-color 0.5s ease;
+}
+
+.transparent-navbar {
+  background-color: transparent !important; /* Make the navbar transparent */
+}
+
+.navbar-brand-custom {
+  font-size: 2.5rem;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  height: 50px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.nav-link-custom {
+  font-size: 3.4rem; 
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.nav-link-custom:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  z-index: -1;
+  transition: width 0.3s ease;
+}
+
+.nav-link-custom:hover:before {
+  width: 100%;
+}
+
+.nav-link-custom:hover {
+  color: #000000;
+}
+
+.nav-link-custom::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #ffffff;
+  transition: width 0.3s;
+}
+
+.nav-link-custom:hover::after {
+  width: 100%;
+}
+
+.nav-link-custom .btn {
+  border-radius: 30px; 
+}
+
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}

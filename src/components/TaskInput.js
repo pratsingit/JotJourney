@@ -1,14 +1,15 @@
-// TaskInput.js
 import React, { useState } from 'react';
 
 const TaskInput = ({ addTask }) => {
-  const [task, setTask] = useState('');
+  const [taskName, setTaskName] = useState('');
+  const [taskDescription, setTaskDescription] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (task.trim()) {
-      addTask(task);
-      setTask('');
+    if (taskName.trim()) {
+      addTask({ name: taskName, description: taskDescription }); // Pass an object with name and description
+      setTaskName('');
+      setTaskDescription('');
     }
   };
 
@@ -19,8 +20,15 @@ const TaskInput = ({ addTask }) => {
           type="text"
           className="form-control"
           placeholder="Add a task..."
-          value={task}
-          onChange={(e) => setTask(e.target.value)}
+          value={taskName}
+          onChange={(e) => setTaskName(e.target.value)}
+        />
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Task description..."
+          value={taskDescription}
+          onChange={(e) => setTaskDescription(e.target.value)}
         />
         <button className="btn btn-outline-primary" type="submit">
           Add

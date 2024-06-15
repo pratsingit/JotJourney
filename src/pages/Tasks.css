@@ -1,0 +1,40 @@
+.tasks-container {
+    position: relative;
+    height: 82.3vh; /* Set a fixed height for the container */
+    margin: 0;
+    padding: 0;
+    overflow-y: auto; /* Enable vertical scrolling */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+    background-image: url('../pages/background1.jpg'); /* Set background image */
+    background-size: cover;
+    background-position: center;
+    z-index: 0; /* Lower z-index to be below tasks-content */
+}
+
+.tasks-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../pages/background1.jpg'); /* Same background image */
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px); /* Apply blur effect to background */
+    z-index: -1;
+    pointer-events: none; /* Disable pointer events on the blurred background */
+}
+
+.tasks-content {
+    width: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for tasks content */
+    z-index: 1;
+    position: relative; /* Ensure tasks-content is above blurred background */
+    pointer-events: auto; /* Enable pointer events for tasks content */
+}

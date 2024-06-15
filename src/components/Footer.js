@@ -15,7 +15,7 @@ const Footer = () => {
         <Row>
           <Col className="text-center">
             &copy; 2024 My Trip Mates. Made by 
-            <a href="https://www.linkedin.com/in/pratyushchowdhury/" style={linkStyle}>Pratyush Chowdhury</a>
+            <a href="https://www.linkedin.com/in/pratyushchowdhury/" style={linkStyle}>Pratyush Chowdhury.</a>
           </Col>
         </Row>
       </Container>

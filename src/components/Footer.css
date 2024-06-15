@@ -1,0 +1,28 @@
+/* Footer.css */
+
+.bg-dark.text-white {
+    background-color: #343a40; /* Dark background color */
+    color: #ffffff; /* White text color */
+  }
+  
+  .py-2 {
+    padding-top: 0.5rem; /* Adjust top padding */
+    padding-bottom: 0.5rem; /* Adjust bottom padding */
+  }
+  
+  .mt-auto {
+    margin-top: auto; /* Ensure the footer sticks to the bottom */
+  }
+  
+  /* Adjust link styles */
+  a {
+    color: red; /* Link color */
+    margin-right: 5px; /* Right margin */
+    margin-left: 5px; /* Left margin */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  a:hover {
+    color: #ff0000; /* Hover color */
+  }
+  
