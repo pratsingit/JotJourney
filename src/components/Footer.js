@@ -2,12 +2,20 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
 const Footer = () => {
-  return (
-    <footer className="bg-dark text-white py-3 mt-auto">
+    const linkStyle = {
+        color: 'red', 
+        marginRight: '5px',
+        marginLeft: '5px',
+        textDecoration: 'none',
+      };
+
+    return (
+    <footer className="bg-dark text-white py-2 mt-auto">
       <Container>
         <Row>
           <Col className="text-center">
-            &copy; 2024 My Trip Mates. All Rights Reserved.
+            &copy; 2024 My Trip Mates. Made by 
+            <a href="https://www.linkedin.com/in/pratyushchowdhury/" style={linkStyle}>Pratyush Chowdhury</a>
           </Col>
         </Row>
       </Container>
@@ -16,3 +24,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
