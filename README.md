@@ -20,7 +20,7 @@ This project was bootstrapped with Create React App.
 
 ## Live Deployment
 Check out the Live Deployement [here](https://mtm-frontend-pratyush-chowdhury.vercel.app/).
-https://mtm-frontend-pratyush-chowdhury.vercel.app/
+- https://mtm-frontend-pratyush-chowdhury.vercel.app/
 
 ## Setup Instructions
 1. Clone the repository:
